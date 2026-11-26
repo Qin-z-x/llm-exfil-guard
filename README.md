@@ -5,6 +5,8 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
 [![stdlib-only core](https://img.shields.io/badge/core-stdlib%20only-brightgreen.svg)](scripts/check_core_deps.py)
 
+> **If this is useful, a star or fork helps others find it.** It is a small, unaided project; stars/fork counts are the honest signal that keeps it maintained. No accounts, no telemetry, no paid promotion.
+
 **Detect and defuse data exfiltration through rendered LLM output** — Markdown and
 HTML image beacons, iframes, CSS `url()`, link preload/prefetch, meta refresh,
 `ping=`, `data:` URIs, base64/high-entropy query payloads, and hidden content
@@ -250,6 +252,19 @@ CSS `url()`、meta refresh、`ping`、`data:` URI 等会让浏览器**自动发�
 可复现证据见 [`docs/EVIDENCE.md`](docs/EVIDENCE.md)：真实无头 Edge 浏览器对本地 sink 发出
 **6 次** beacon 请求、解码出 3 个 demo 标记，而清洗后的页面**0 次**请求；135 个单元测试全部通过。
 本项目是防御工具与本地演示，不声称发现新漏洞或新 CVE；启发式检测存在误报/漏报，详见威胁模型。
+
+## Related projects (same author, independent, stdlib-first)
+
+Other tools by the same author covering adjacent LLM failure surfaces. Each is independent: use or fork only the one you need; every README states its own limits.
+
+- [yixin-go](https://github.com/Qin-Z-x/yixin-go) - local-first Windows Go (weiqi/baduk) sparring partner built on KataGo + Human SL.
+- [llm-failbench](https://github.com/Qin-Z-x/llm-failbench) - 100 deterministic, judge-free failure probes for LLMs, with a cited evidence atlas and a CI regression gate.
+- [llm-json-doctor](https://github.com/Qin-Z-x/llm-json-doctor) - deterministic repair + JSON Schema validation for malformed LLM JSON; no LLM calls, stdlib only.
+- [llm-invisible-guard](https://github.com/Qin-Z-x/llm-invisible-guard) - detect and sanitize invisible-Unicode prompt injection (zero-width, bidi, Unicode-Tag smuggling).
+- [slopsquat-guard](https://github.com/Qin-Z-x/slopsquat-guard) - flag hallucinated / typosquatted PyPI and npm dependency names before you install them.
+- [regex-redos-guard](https://github.com/Qin-Z-x/regex-redos-guard) - ReDoS (catastrophic backtracking) risk detection for LLM-generated regexes, static + timed probes.
+
+If one of these fits your pipeline, a star/fork on that repo is the only help this project asks for.
 
 ## License and acknowledgements
 
