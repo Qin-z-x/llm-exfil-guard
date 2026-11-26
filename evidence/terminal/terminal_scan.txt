@@ -1,0 +1,46 @@
+Windows PowerShell - exfil-guard evidence session (real captured output)
+
+$ python -m exfil_guard scan examples/poisoned_chat.md
+exfil-guard 0.1.0  scan  examples/poisoned_chat.md  (1174 chars, 21 lines)
+HIGH   EG-EXFIL-URL         line 3 col 1  remote URL carries data to an untrusted endpoint (query 'd': base64 payload decodes to sensitive-looking text 'conversation=chat-9f2c-demo; marker=DEMO-EXFIL-MARKER-9c4f2…')
+MEDIUM EG-REMOTE-ASSET      line 3 col 1  rendered output automatically loads a remote resource
+HIGH   EG-HIDDEN-INJECTION  line 7 col 1  hidden element contains instruction/exfiltration-like content (agents may read it)
+HIGH   EG-EXFIL-URL         line 9 col 1  URL in rendered text carries encoded data to an untrusted endpoint
+HIGH   EG-EXFIL-URL         line 12 col 1  remote URL carries data to an untrusted endpoint (query 'd': base64 payload decodes to sensitive-looking text 'env=production; token=DEMO-ENV-MARKER-57d10c')
+MEDIUM EG-HIDDEN-STYLE      line 12 col 1  element is hidden from the human but readable by agents: opacity<=0.05
+MEDIUM EG-REMOTE-ASSET      line 12 col 1  rendered output automatically loads a remote resource
+HIGH   EG-EXFIL-URL         line 14 col 1  remote URL carries data to an untrusted endpoint (query 'd': base64 payload decodes to sensitive-looking text 'coverage=93.7; report_token=DEMO-REF-MARKER-31b8d5')
+MEDIUM EG-REMOTE-ASSET      line 14 col 1  rendered output automatically loads a remote resource
+HIGH   EG-HIDDEN-COMMENT    line 16 col 1  HTML comment carries instruction/exfiltration-like content invisible in the rendered page
+summary: 10 finding(s): 6 high, 4 medium, 0 low
+[exit code: 0]
+
+$ python -m exfil_guard scan examples/poisoned_chat.md --fail-on high
+exfil-guard 0.1.0  scan  examples/poisoned_chat.md  (1174 chars, 21 lines)
+HIGH   EG-EXFIL-URL         line 3 col 1  remote URL carries data to an untrusted endpoint (query 'd': base64 payload decodes to sensitive-looking text 'conversation=chat-9f2c-demo; marker=DEMO-EXFIL-MARKER-9c4f2…')
+MEDIUM EG-REMOTE-ASSET      line 3 col 1  rendered output automatically loads a remote resource
+HIGH   EG-HIDDEN-INJECTION  line 7 col 1  hidden element contains instruction/exfiltration-like content (agents may read it)
+HIGH   EG-EXFIL-URL         line 9 col 1  URL in rendered text carries encoded data to an untrusted endpoint
+HIGH   EG-EXFIL-URL         line 12 col 1  remote URL carries data to an untrusted endpoint (query 'd': base64 payload decodes to sensitive-looking text 'env=production; token=DEMO-ENV-MARKER-57d10c')
+MEDIUM EG-HIDDEN-STYLE      line 12 col 1  element is hidden from the human but readable by agents: opacity<=0.05
+MEDIUM EG-REMOTE-ASSET      line 12 col 1  rendered output automatically loads a remote resource
+HIGH   EG-EXFIL-URL         line 14 col 1  remote URL carries data to an untrusted endpoint (query 'd': base64 payload decodes to sensitive-looking text 'coverage=93.7; report_token=DEMO-REF-MARKER-31b8d5')
+MEDIUM EG-REMOTE-ASSET      line 14 col 1  rendered output automatically loads a remote resource
+HIGH   EG-HIDDEN-COMMENT    line 16 col 1  HTML comment carries instruction/exfiltration-like content invisible in the rendered page
+summary: 10 finding(s): 6 high, 4 medium, 0 low
+FAIL: 6 finding(s) at or above severity 'high' (--fail-on high)
+[exit code: 1]
+
+$ python -m exfil_guard scan examples/clean_chat.md --fail-on low
+exfil-guard 0.1.0  scan  examples/clean_chat.md  (268 chars, 10 lines)
+summary: 0 finding(s): 0 high, 0 medium, 0 low
+OK: no finding at or above severity 'low'
+[exit code: 0]
+
+$ python -m exfil_guard scan examples/hidden_instruction.md
+exfil-guard 0.1.0  scan  examples/hidden_instruction.md  (324 chars, 10 lines)
+HIGH   EG-HIDDEN-INJECTION  line 5 col 1  hidden element contains instruction/exfiltration-like content (agents may read it)
+HIGH   EG-WEBHOOK           line 6 col 71  URL in rendered text carries encoded data to an untrusted endpoint
+MEDIUM EG-HIDDEN-COMMENT    line 9 col 1  HTML comment is invisible when rendered but still present in the text an agent reads
+summary: 3 finding(s): 2 high, 1 medium, 0 low
+[exit code: 0]

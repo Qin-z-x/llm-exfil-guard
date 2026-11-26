@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Qin-Z-x/llm-exfil-guard/docs/scan-result.schema.json",
+  "title": "exfil-guard scan result",
+  "description": "Shape of `python -m exfil_guard scan --json` output.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tool", "version", "source", "characters", "lines", "allow_domains", "summary", "findings"],
+  "properties": {
+    "tool": { "type": "string", "const": "exfil-guard" },
+    "version": { "type": "string" },
+    "source": { "type": "string" },
+    "characters": { "type": "integer", "minimum": 0 },
+    "lines": { "type": "integer", "minimum": 1 },
+    "allow_domains": { "type": "array", "items": { "type": "string" } },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total", "high", "medium", "low"],
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "high": { "type": "integer", "minimum": 0 },
+        "medium": { "type": "integer", "minimum": 0 },
+        "low": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "kind", "severity", "start", "end", "line", "column", "message", "data"],
+        "additionalProperties": true,
+        "properties": {
+          "code": { "type": "string", "pattern": "^EG-[A-Z0-9-]+$" },
+          "kind": { "type": "string" },
+          "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+          "start": { "type": "integer", "minimum": 0 },
+          "end": { "type": "integer", "minimum": 0 },
+          "line": { "type": "integer", "minimum": 1 },
+          "column": { "type": "integer", "minimum": 1 },
+          "message": { "type": "string", "minLength": 1 },
+          "data": { "type": "object" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Qin-Z-x/llm-exfil-guard/docs/finding.schema.json",
+  "title": "exfil-guard finding",
+  "description": "One detection produced by exfil_guard.scan(). Offsets are Python str indices (code points); line and column are 1-based.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["code", "kind", "severity", "start", "end", "length", "line", "column", "message", "data"],
+  "properties": {
+    "code": { "type": "string", "pattern": "^EG-[A-Z0-9-]+$" },
+    "kind": {
+      "type": "string",
+      "enum": ["exfil-url", "remote-load", "active-content", "hidden-content", "payload", "a11y"]
+    },
+    "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+    "start": { "type": "integer", "minimum": 0 },
+    "end": { "type": "integer", "minimum": 0 },
+    "length": { "type": "integer", "minimum": 0 },
+    "line": { "type": "integer", "minimum": 1 },
+    "column": { "type": "integer", "minimum": 1 },
+    "message": { "type": "string", "minLength": 1 },
+    "data": { "type": "object" }
+  }
+}

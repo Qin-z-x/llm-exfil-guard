@@ -1,0 +1,85 @@
+{
+  "edge": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "skipped": false,
+  "screenshots": {
+    "demo_chat.png": {
+      "bytes": 130118,
+      "sha256": "c978ca94b534a1a505697bd7a92aa8df6a048b19be1d2688273eb5fa7de83807",
+      "screenshot_exit_code": 0
+    },
+    "demo_clean.png": {
+      "bytes": 72713,
+      "sha256": "887750ff13cbb11fdc5034466e16703c7d801b9c45a1f6cee65f8fab57d1fd70",
+      "screenshot_exit_code": 0
+    }
+  },
+  "server_url": "http://127.0.0.1:62389/",
+  "sink_url": "http://127.0.0.1:62389/collect",
+  "requests_poisoned_phase": [
+    "/",
+    "/collect?d=Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+    "/collect?d=Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU=",
+    "/collect?d=ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=&pixel=1",
+    "/",
+    "/collect?d=Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+    "/collect?d=ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=&pixel=1",
+    "/collect?d=Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU="
+  ],
+  "requests_clean_phase": [
+    "/clean",
+    "/clean"
+  ],
+  "beacon_requests": [
+    "/collect?d=Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+    "/collect?d=Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU=",
+    "/collect?d=ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=&pixel=1",
+    "/collect?d=Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+    "/collect?d=ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=&pixel=1",
+    "/collect?d=Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU="
+  ],
+  "decoded_beacons": [
+    {
+      "param": "d",
+      "base64": "Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+      "decoded": "conversation=chat-9f2c-demo; marker=DEMO-EXFIL-MARKER-9c4f2a7e"
+    },
+    {
+      "param": "d",
+      "base64": "Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU=",
+      "decoded": "coverage=93.7; report_token=DEMO-REF-MARKER-31b8d5"
+    },
+    {
+      "param": "d",
+      "base64": "ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=",
+      "decoded": "env=production; token=DEMO-ENV-MARKER-57d10c"
+    },
+    {
+      "param": "d",
+      "base64": "Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+      "decoded": "conversation=chat-9f2c-demo; marker=DEMO-EXFIL-MARKER-9c4f2a7e"
+    },
+    {
+      "param": "d",
+      "base64": "ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=",
+      "decoded": "env=production; token=DEMO-ENV-MARKER-57d10c"
+    },
+    {
+      "param": "d",
+      "base64": "Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU=",
+      "decoded": "coverage=93.7; report_token=DEMO-REF-MARKER-31b8d5"
+    }
+  ],
+  "matched_demo_markers": [
+    "DEMO-ENV-MARKER-57d10c",
+    "DEMO-EXFIL-MARKER-9c4f2a7e",
+    "DEMO-REF-MARKER-31b8d5"
+  ],
+  "dom_reported_beacon_count": 3,
+  "assertions": {
+    "browser_made_beacon_requests": true,
+    "decoded_query_contains_demo_markers": true,
+    "cleaned_page_made_no_beacon_requests": true
+  },
+  "dom_snapshot": "evidence/raw/demo_page_dom.html",
+  "clean_dom_snapshot": "evidence/raw/demo_clean_dom.html"
+}

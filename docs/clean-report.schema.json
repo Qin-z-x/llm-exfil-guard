@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Qin-Z-x/llm-exfil-guard/docs/clean-report.schema.json",
+  "title": "exfil-guard clean report",
+  "description": "Shape of `clean(text, mode='report')` / `python -m exfil_guard clean --mode report`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tool", "version", "mode", "characters", "lines", "summary", "findings", "cleaned", "removed"],
+  "properties": {
+    "tool": { "type": "string", "const": "exfil-guard" },
+    "version": { "type": "string" },
+    "mode": { "type": "string", "const": "report" },
+    "characters": { "type": "integer", "minimum": 0 },
+    "lines": { "type": "integer", "minimum": 1 },
+    "summary": {
+      "type": "object",
+      "required": ["total", "high", "medium", "low"],
+      "additionalProperties": false,
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "high": { "type": "integer", "minimum": 0 },
+        "medium": { "type": "integer", "minimum": 0 },
+        "low": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "findings": { "type": "array", "items": { "type": "object" } },
+    "cleaned": { "type": "string" },
+    "removed": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    }
+  }
+}

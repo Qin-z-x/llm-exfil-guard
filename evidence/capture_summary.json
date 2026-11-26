@@ -1,0 +1,212 @@
+{
+  "tool": "exfil-guard",
+  "version": "0.1.0",
+  "captured_at_utc": "2026-11-26T01:41:41Z",
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15",
+    "edge": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "captured_at": "2026-11-26T01:41:41Z"
+  },
+  "demo": {
+    "summary": {
+      "total": 10,
+      "high": 6,
+      "medium": 4,
+      "low": 0
+    },
+    "cleaned_summary": {
+      "total": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "assertions": {
+      "scan_flags_exfiltration": true,
+      "clean_removes_all_remote_loads": true,
+      "visible_text_preserved": true,
+      "secret_absent_from_cleaned": true,
+      "hidden_instruction_removed": true
+    },
+    "paths": {
+      "transcript_sha256": "0f90391f2fb36f41c998d13b3e5dc49c9853249625173312f47c1677cd68e30f",
+      "cleaned_sha256": "4ebdb129c2291ff2a5b5aed2b3d6851c782fcc5f5f9972e7e5734f996688d527",
+      "page_sha256": "a9553acd4d5fa0646598f1d937d788b6ad5f56f2d91a656eabdab0ec1b60e2d2",
+      "clean_page_sha256": "7cdddf383431e57ed772da41246ebf4fce2115fd9b42bb44f08d8e18a2154641"
+    }
+  },
+  "browser": {
+    "edge": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "skipped": false,
+    "screenshots": {
+      "demo_chat.png": {
+        "bytes": 130118,
+        "sha256": "c978ca94b534a1a505697bd7a92aa8df6a048b19be1d2688273eb5fa7de83807",
+        "screenshot_exit_code": 0
+      },
+      "demo_clean.png": {
+        "bytes": 72713,
+        "sha256": "887750ff13cbb11fdc5034466e16703c7d801b9c45a1f6cee65f8fab57d1fd70",
+        "screenshot_exit_code": 0
+      }
+    },
+    "server_url": "http://127.0.0.1:62389/",
+    "sink_url": "http://127.0.0.1:62389/collect",
+    "requests_poisoned_phase": [
+      "/",
+      "/collect?d=Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+      "/collect?d=Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU=",
+      "/collect?d=ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=&pixel=1",
+      "/",
+      "/collect?d=Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+      "/collect?d=ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=&pixel=1",
+      "/collect?d=Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU="
+    ],
+    "requests_clean_phase": [
+      "/clean",
+      "/clean"
+    ],
+    "beacon_requests": [
+      "/collect?d=Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+      "/collect?d=Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU=",
+      "/collect?d=ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=&pixel=1",
+      "/collect?d=Y29udmVyc2F0aW9uPWNoYXQtOWYyYy1kZW1vOyBtYXJrZXI9REVNTy1FWEZJTC1NQVJLRVItOWM0ZjJhN2U=",
+      "/collect?d=ZW52PXByb2R1Y3Rpb247IHRva2VuPURFTU8tRU5WLU1BUktFUi01N2QxMGM=&pixel=1",
+      "/collect?d=Y292ZXJhZ2U9OTMuNzsgcmVwb3J0X3Rva2VuPURFTU8tUkVGLU1BUktFUi0zMWI4ZDU="
+    ],
+    "matched_demo_markers": [
+      "DEMO-ENV-MARKER-57d10c",
+      "DEMO-EXFIL-MARKER-9c4f2a7e",
+      "DEMO-REF-MARKER-31b8d5"
+    ],
+    "dom_reported_beacon_count": 3,
+    "assertions": {
+      "browser_made_beacon_requests": true,
+      "decoded_query_contains_demo_markers": true,
+      "cleaned_page_made_no_beacon_requests": true
+    },
+    "dom_snapshot": "evidence/raw/demo_page_dom.html",
+    "clean_dom_snapshot": "evidence/raw/demo_clean_dom.html"
+  },
+  "tests": {
+    "count": 135,
+    "result": "OK",
+    "tail": ".......................................................................................................................................\n----------------------------------------------------------------------\nRan 135 tests in 2.032s\n\nOK",
+    "exit_code": 0
+  },
+  "cli_exit_codes": [
+    {
+      "argv": [
+        "python",
+        "-m",
+        "exfil_guard",
+        "scan",
+        "examples/poisoned_chat.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "exfil_guard",
+        "scan",
+        "examples/poisoned_chat.md",
+        "--fail-on",
+        "high"
+      ],
+      "exit_code": 1
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "exfil_guard",
+        "scan",
+        "examples/clean_chat.md",
+        "--fail-on",
+        "low"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "exfil_guard",
+        "scan",
+        "examples/hidden_instruction.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "exfil_guard",
+        "clean",
+        "examples/poisoned_chat.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "<clean verification one-liner>"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "exfil_guard",
+        "clean",
+        "examples/poisoned_chat.md",
+        "--mode",
+        "report"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "exfil_guard",
+        "demo",
+        "--json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "screenshots": {
+    "scan": {
+      "path": "docs\\screenshots\\terminal_scan.png",
+      "sha256": "9f0c57c85ae7b3ab97d13fa1e5ac8939c05c0d6c4428834984dffccbdd898e60",
+      "bytes": 146812
+    },
+    "clean": {
+      "path": "docs\\screenshots\\terminal_clean.png",
+      "sha256": "527d2b6d766b716e33e75aa29e19c6e3687f560312214ba04b1fe1fa9e357545",
+      "bytes": 39946
+    },
+    "tests": {
+      "path": "docs\\screenshots\\terminal_tests.png",
+      "sha256": "3653d0b9903e187c51e6d1c776f199e05d79262a20a057247d83d648b6cab5b0",
+      "bytes": 12459
+    }
+  },
+  "all_assertions": {
+    "scan_flags_exfiltration": true,
+    "clean_removes_all_remote_loads": true,
+    "visible_text_preserved": true,
+    "secret_absent_from_cleaned": true,
+    "hidden_instruction_removed": true,
+    "browser:browser_made_beacon_requests": true,
+    "browser:decoded_query_contains_demo_markers": true,
+    "browser:cleaned_page_made_no_beacon_requests": true,
+    "tests_pass": true
+  },
+  "all_assertions_pass": true
+}
