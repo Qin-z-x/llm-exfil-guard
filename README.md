@@ -273,3 +273,7 @@ MIT — see [LICENSE](LICENSE). Prior art: indirect prompt injection research
 Slack AI exfiltration research (PromptArmor), EchoLeak/CVE-2025-32711
 (Aim Security), and the OWASP LLM Top 10. This project is independent and not
 affiliated with those authors or vendors.
+
+## 视频演示
+- B站：https://www.bilibili.com/video/BV1r2y2zYEdv （llm-exfil-guard 4:42 演示）
+- 项目主页/在线索引：https://qin-z-x.github.io/llm-security-toolkit/ （安全系列）或 https://github.com/Qin-Z-x
